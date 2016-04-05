@@ -1,0 +1,39 @@
+{
+  "user:34": {
+    "id": 34,
+    "profile": {
+      "firstName": "Carlos",
+      "lastName": "Justiniano",
+      "homeState": "NY",
+      "homeCity": "Bronx"
+    },
+    "computers": {
+      "models": [
+        {
+          "name": "vic20",
+          "year": 1981
+        },
+        {
+          "name": "trs-80",
+          "year": 1983
+        }
+      ]
+    },
+    "music": {
+      "favorites": {
+        "artists": [
+          "Armin Van Buuren",
+          "Paul Oakenfold",
+          "Led Zeppelin",
+          "New Order",
+          "Spanish Harlem Orchestra"
+        ],
+        "styles": [
+          "Techno",
+          "Rock",
+          "Latin"
+        ]
+      }
+    }
+  }
+}
