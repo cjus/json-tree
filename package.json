@@ -1,5 +1,5 @@
 {
-  "name": "json-tree",
+  "name": "@flywheelsports/json-tree",
   "version": "0.1.0",
   "description": "JSON Tree - JSON manipulation and query",
   "author": "Carlos Justiniano",
@@ -28,5 +28,17 @@
   },
   "bin": {
     "json-tree": "json-tree.js"
-  }
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flywheelsports/json-tree.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/flywheelsports/json-tree/issues"
+  },
+  "homepage": "https://github.com/flywheelsports/json-tree#readme"
 }
