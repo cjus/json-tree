@@ -170,6 +170,8 @@ Upon loading,  the custom REPL also loads an instance of JSON Tree  into the ses
 
 ```shell
 ➤ jt
+```
+```javascript
 IJSONTree { tree: {}, branchSegments: [] }
 ```
 
