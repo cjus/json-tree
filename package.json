@@ -1,6 +1,6 @@
 {
   "name": "@flywheelsports/json-tree",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "JSON Tree - JSON manipulation and query",
   "author": "Carlos Justiniano",
   "keywords": [
@@ -14,7 +14,7 @@
   "engines": {
     "node": ">=4.2.0"
   },
-  "main": "json-tree.js",
+  "main": "index.js.js",
   "scripts": {
     "start": "node repl.js"
   },
@@ -27,7 +27,7 @@
     "jscs-jsdoc": "^1.2.0"
   },
   "bin": {
-    "json-tree": "json-tree.js"
+    "json-tree": "index.js"
   },
   "directories": {
     "test": "tests"
