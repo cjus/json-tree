@@ -4,6 +4,10 @@ JSON Tree is a module for manipulating and querying JavaScript objects.
 
 This becomes easier to do when we treat a [JSON](http://www.json.org/) derived object as a [tree](https://en.wikipedia.org/wiki/Tree_(data_structure)) of branches. That's the basic premise in JSON Tree. However, doing so requires adhering to two simple rules which we'll consider in [Working with JSON Tree](#Working with JSON Tree).
 
+![Tree](tree.png)
+
+---
+
 ## Table of Contents
 
 * [1. Introduction](#Introduction)
