@@ -6,8 +6,6 @@ This becomes easier to do when we treat a [JSON](http://www.json.org/) derived o
 
 ![Tree](tree.png)
 
----
-
 ## Table of Contents
 
 * [1. Introduction](#Introduction)
