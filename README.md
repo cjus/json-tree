@@ -16,7 +16,7 @@ This becomes easier to do when we treat a [JSON](http://www.json.org/) derived o
 		* [1.3.2 Exiting the REPL](#Exiting the REPL)
 		* [1.3.3 Saving your session](#Saving your session)
 		* [1.3.4 Loading saved JavaScript files](#Loading saved JavaScript files)
-		* [1.3.5 Immediate access to JT](#Immediate access to JT)
+		* [1.3.5 Immediate access to JSONTree](#Immediate access to JSONTree)
 * [2. Working with JSON Tree](#Working with JSON Tree)
 	* [2.1 Object Format](#Object Format)
 	* [2.2 Branch specifiers](#Branch specifiers)
@@ -165,8 +165,8 @@ The `.load` command can be used to load external JS scripts.
 
 > `Tip`: The REPL  `.load` command is used for loading `JavaScript` files. Be careful not to confuse it with the JSON Tree `load` method which is used for loading `JSON` files.
 
-<a name="Immediate access to JT"></a>
-#### 1.3.5 Immediate access to JT
+<a name="Immediate access to JSONTree"></a>
+#### 1.3.5 Immediate access to JSONTree
 
 Upon loading,  the custom REPL also loads an instance of JSON Tree  into the session.
 
