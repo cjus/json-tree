@@ -1,7 +1,7 @@
 'use strict';
 
 const repl = require('repl');
-const jt = require('./json-tree');
+const jt = require('./index');
 
 // open the repl session
 var replServer = repl.start({
