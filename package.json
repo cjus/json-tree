@@ -1,6 +1,6 @@
 {
-  "name": "@flywheelsports/json-tree",
-  "version": "0.2.3",
+  "name": "fwsp-json-tree",
+  "version": "0.2.4",
   "description": "JSON Tree - JSON manipulation and query",
   "author": "Carlos Justiniano",
   "keywords": [
@@ -12,33 +12,33 @@
   ],
   "analyze": false,
   "engines": {
-    "node": ">=4.2.0"
+    "node": ">=6.2.1"
   },
   "main": "index.js",
   "scripts": {
     "start": "node repl.js"
   },
   "dependencies": {
-    "jspath": "^0.3.2"
+    "jspath": "0.3.3"
   },
   "devDependencies": {
-    "eslint": "^1.9.0",
-    "jscs": "^2.5.1",
-    "jscs-jsdoc": "^1.2.0"
+    "eslint": "3.9.1",
+    "jscs": "3.0.7",
+    "jscs-jsdoc": "2.0.0"
   },
   "bin": {
-    "json-tree": "index.js"
+    "fwsp-json-tree": "index.js"
   },
   "directories": {
     "test": "tests"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/flywheelsports/json-tree.git"
+    "url": "git+https://github.com/flywheelsports/fwsp-json-tree.git"
   },
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/flywheelsports/json-tree/issues"
+    "url": "https://github.com/flywheelsports/fwsp-json-tree/issues"
   },
-  "homepage": "https://github.com/flywheelsports/json-tree#readme"
+  "homepage": "https://github.com/flywheelsports/fwsp-json-tree#readme"
 }

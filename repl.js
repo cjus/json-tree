@@ -9,12 +9,4 @@ var replServer = repl.start({
   ignoreUndefined: true
 });
 
-// replServer.defineCommand('say', {
-//   help: 'Say Message',
-//   action: function(name) {
-//     this.outputStream.write(`${name}!\n`);
-//     this.displayPrompt();
-//   }
-// });
-
 replServer.context.jt = jt;

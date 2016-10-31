@@ -379,6 +379,3 @@ class IJSONTree extends JSONTree {
 }
 
 module.exports = new IJSONTree();
-
-//TODO(CJ): do better data object validation
-//Upgrade to use ImmutableJS
