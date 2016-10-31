@@ -102,7 +102,7 @@ Most of the Utility methods are only useful for debugging. However, we'll look a
 JSON Tree is a node module and can be installed using:
 
 ```shell
-$ npm install
+$ npm -i fwsp-json-tree
 ```
 
 <a name="Test REPL"></a>
