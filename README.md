@@ -1,4 +1,4 @@
-# JSON Tree
+# JSON Tree [![Build Status](https://travis-ci.org/flywheelsports/fwsp-json-tree.svg?branch=master)](https://travis-ci.org/flywheelsports/fwsp-json-tree)
 
 JSON Tree is a module for manipulating and querying JavaScript objects.
 
