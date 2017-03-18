@@ -9,39 +9,39 @@ This becomes easier to do when we treat a [JSON](http://www.json.org/) derived o
 ## Table of Contents
 
 * [1. Introduction](#Introduction)
-	* [1.1 Method overview](#Method overview)
-	* [1.2 Installing JSON Tree](#Installing JSON Tree)
-	* [1.3 Test REPL](#Test REPL)
-		* [1.3.1 Starting the REPL](#Starting the REPL)
-		* [1.3.2 Exiting the REPL](#Exiting the REPL)
-		* [1.3.3 Saving your session](#Saving your session)
-		* [1.3.4 Loading saved JavaScript files](#Loading saved JavaScript files)
-		* [1.3.5 Immediate access to JSONTree](#Immediate access to JSONTree)
-* [2. Working with JSON Tree](#Working with JSON Tree)
-	* [2.1 Object Format](#Object Format)
-	* [2.2 Branch specifiers](#Branch specifiers)
-	* [2.3 Loading data into JT](#Loading data into JT)
-	* [2.4 Getting a branch](#Getting a branch)
-	* [2.5 Appending a branch](#Appending a branch)
-	* [2.6 Deleting a Branch](#Deleting a Branch)
-	* [2.7 Moving a Branch](#Moving a Branch)
-	* [2.8 Branch paths - revisited](#Branch paths - revisited)
-* [3. Querying JSON Tree](#Querying JSON Tree)
-	* [3.1 Querying with the dot operator](#Querying with the dot operator)
-	* [3.2 Querying with the array operator](#Querying with the array operator)
-    * [3.3 Querying with predicates](#Querying with predicates)
-* [4. Offline storage](#Offline storage)
-	* [4.1 Simple storage cases](#Simple storage cases)
-	* [4.2 Working with a larger JSON document](#Working with a larger JSON document)
-		* [4.2.1 Relational databases](#Relational databases)
-		* [4.2.2 NoSQL stores - Redis](#NoSQL stores - Redis)
-			* [4.2.2.1 Storing a JSON Tree](#Storing a JSON Tree)
-			* [4.2.2.2 Loading and restoring a JSON Tree](#Loading and restoring a JSON Tree)
-			* [4.2.2.3 A breakdown of the load technique](#A breakdown of the load technique)
-		* [4.2.3 NoSQL Stores - AWS DynamoDB](#NoSQL Stores - AWS DynamoDB)
-			* [4.2.3.1 Getting started with DynamoDB](#Getting started with DynamoDB)
-			* [4.2.3.2 Storing Tree data in DynamoDB](#Storing Tree data in DynamoDB)
-			* [4.2.3.3 Loading Tree data from DynamoDB](#Loading Tree data from DynamoDB)
+	* [1.1 Method overview](#Method-overview)
+	* [1.2 Installing JSON Tree](#Installing-JSON-Tree)
+	* [1.3 Test REPL](#Test-REPL)
+		* [1.3.1 Starting the REPL](#Starting-the-REPL)
+		* [1.3.2 Exiting the REPL](#Exiting-the-REPL)
+		* [1.3.3 Saving your session](#Saving-your-session)
+		* [1.3.4 Loading saved JavaScript files](#Loading-saved-JavaScript-files)
+		* [1.3.5 Immediate access to JSONTree](#Immediate-access-to-JSONTree)
+* [2. Working with JSON Tree](#Working-with-JSON-Tree)
+	* [2.1 Object Format](#Object-Format)
+	* [2.2 Branch specifiers](#Branch-specifiers)
+	* [2.3 Loading data into JT](#Loading-data-into-JT)
+	* [2.4 Getting a branch](#Getting-a-branch)
+	* [2.5 Appending a branch](#Appending-a-branch)
+	* [2.6 Deleting a Branch](#Deleting-a-Branch)
+	* [2.7 Moving a Branch](#Moving-a-Branch)
+	* [2.8 Branch paths - revisited](#Branch-paths-revisited)
+* [3. Querying JSON Tree](#Querying-JSON-Tree)
+	* [3.1 Querying with the dot operator](#Querying-with-the-dot-operator)
+	* [3.2 Querying with the array operator](#Querying-with-the-array-operator)
+    * [3.3 Querying with predicates](#Querying-with-predicates)
+* [4. Offline storage](#Offline-storage)
+	* [4.1 Simple storage cases](#Simple-storage-cases)
+	* [4.2 Working with a larger JSON document](#Working-with-a-larger-JSON-document)
+		* [4.2.1 Relational databases](#Relational-databases)
+		* [4.2.2 NoSQL stores - Redis](#NoSQL-stores-Redis)
+			* [4.2.2.1 Storing a JSON Tree](#Storing-a-JSON-Tree)
+			* [4.2.2.2 Loading and restoring a JSON Tree](#Loading-and-restoring-a-JSON-Tree)
+			* [4.2.2.3 A breakdown of the load technique](#A-breakdown-of-the-load-technique)
+		* [4.2.3 NoSQL Stores - AWS DynamoDB](#NoSQL-Stores-AWS-DynamoDB)
+			* [4.2.3.1 Getting started with DynamoDB](#Getting-started-with-DynamoDB)
+			* [4.2.3.2 Storing Tree data in DynamoDB](#Storing-Tree-data-in-DynamoDB)
+			* [4.2.3.3 Loading Tree data from DynamoDB](#Loading-Tree-data-from-DynamoDB)
 
 <a name="Introduction"></a>   
 ## 1. Introduction
@@ -68,7 +68,7 @@ http://server/user?query='filters.music.favorite.artists'
 http://server/library?query='.books{.price < 16}'
 ```
 
-<a name="Method overview"></a>
+<a name="Method-overview"></a>
 ## 1.1 Method overview
 
 JSON Tree exposes a collection of methods which are organized under four general categories: `Tree`, `Branch`, `Query` and `Utility`.
@@ -96,7 +96,7 @@ Category | Command | Description
 
 Most of the Utility methods are only useful for debugging. However, we'll look at the use of each of these methods throughout this document.
 
-<a name="Installing JSON Tree"></a>
+<a name="Installing-JSON-Tree"></a>
 ### 1.2 Installing JSON Tree
 
 JSON Tree is a node module and can be installed using:
@@ -105,7 +105,7 @@ JSON Tree is a node module and can be installed using:
 $ npm -i fwsp-json-tree
 ```
 
-<a name="Test REPL"></a>
+<a name="Test-REPL"></a>
 ### 1.3 Test REPL
 
 As we saw in the table earlier, JSON Tree comes with a dozen or so methods. Getting to know how they work can take a bit of effort.  To make this easier, a custom [REPL](https://e n.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop) for playing with JSON Tree. This REPL can be an invaluable tool when it comes to using the query capability.  Simply try your queries interactively before embedding them in your projects.
@@ -120,7 +120,7 @@ Keep in mind that the custom REPL is just a wrapper over the NodeJS REPL.  So yo
 You'll also be able to interact with a preloaded instance of JSON Tree.
 
 <a name="Starting the REPL"></a>
-#### 1.3.1 Starting the REPL
+#### 1.3.1 Starting-the-REPL
 
 ```shell
 $ node repl.js
@@ -134,7 +134,7 @@ $ npm start
 ➤
 ```
 
-<a name="Exiting the REPL"></a>
+<a name="Exiting-the-REPL"></a>
 #### 1.3.2 Exiting the REPL
 
 To exit the REPL, just enter the dot command `.exit` at the prompt.
@@ -143,7 +143,7 @@ To exit the REPL, just enter the dot command `.exit` at the prompt.
 ➤ .exit
 ```
 
-<a name="Saving your session"></a>
+<a name="Saving-your-session"></a>
 #### 1.3.3 Saving your session
 
 You can save your session to an external file, using the `.save` command.  This is useful when you want to save time by later loading a prior session as a starting point for continued experimentation.
@@ -154,7 +154,7 @@ You can save your session to an external file, using the `.save` command.  This 
 
 Once saved you can use your favorite text editor to cleanup the exported file.
 
-<a name="Loading saved JavaScript files"></a>
+<a name="Loading-saved-JavaScript-files"></a>
 #### 1.3.4 Loading saved JavaScript files
 
 The `.load` command can be used to load external JS scripts.
@@ -165,7 +165,7 @@ The `.load` command can be used to load external JS scripts.
 
 > `Tip`: The REPL  `.load` command is used for loading `JavaScript` files. Be careful not to confuse it with the JSON Tree `load` method which is used for loading `JSON` files.
 
-<a name="Immediate access to JSONTree"></a>
+<a name="Immediate-access-to-JSONTree"></a>
 #### 1.3.5 Immediate access to JSONTree
 
 Upon loading,  the custom REPL also loads an instance of JSON Tree  into the session.
@@ -177,12 +177,12 @@ IJSONTree { tree: {}, branchSegments: [] }
 
 > `Note`: IJSONTree refers to an: Interface to a JSON Tree module. It appears that way because of how JSON Tree is internally implemented. Ignore the man behind the curtain.
 
-<a name="Working with JSON Tree"></a>
+<a name="Working-with-JSON-Tree"></a>
 ## 2. Working with JSON Tree
 
 Before we get started, it's important to understand two important JT concepts: `Object Format` and `Branch Specifiers`. These are the two rules discussed at the start of this document.
 
-<a name="Object Format"></a>
+<a name="Object-Format"></a>
 ### 2.1 Object Format (Rule 1)
 
 When used with JSON Tree, JavaScript objects need to be in a specific format:
@@ -205,7 +205,7 @@ In the example above we have an object which contains a single named key which i
 
 ***That is our first rule***
 
-<a name="Branch specifiers"></a>
+<a name="Branch-specifiers"></a>
 ### 2.2 Branch specifiers (Rule 2)
 
 Navigating within a  tree requires the use of a branch specifier. For example, in order to append data to a branch you have to know how to specify the target branch.
@@ -229,7 +229,7 @@ The only requirement, when specifying a branch is that the branch path lead dire
 
 The reason for this is that branch paths lead to tree nodes which may themselves contain key / values.  This helps keep tree manipulation clear, as you can't attach an object to to a key value pair, such as a number or string.
 
-<a name="Loading data into JT"></a>
+<a name="Loading-data-into-JT"></a>
 ### 2.3 Loading data into JSON Tree
 
 ```javascript
@@ -282,7 +282,7 @@ Note that our `test/test.json` file adheres to the rule that an object used with
 }
 ```
 
-<a name="Getting a branch"></a>
+<a name="Getting-a-branch"></a>
 ### 2.4 Getting a branch
 
 You can retrieve a branch using the `getBranch` method.
@@ -320,7 +320,7 @@ This is useful when you want to work with a branch using plan JS.
      styles: [ 'Techno', 'Rock', 'Latin', 'Classical' ] } }
 ```
 
-<a name="Appending a branch"></a>
+<a name="Appending-a-branch"></a>
 ### 2.5 Appending a branch
 
 Let's append data to our JSON Tree using the `appendBranch`method.
@@ -359,7 +359,7 @@ We can also see this in a prettier format:
 ➤ jt.prettyPrint( jt.getTree() );
 ```
 
-<a name="Deleting a Branch"></a>
+<a name="Deleting-a-Branch"></a>
 ### 2.6 Deleting a Branch
 
 Given the output of the last example, let's try deleting a branch.
@@ -378,7 +378,7 @@ true
 
 Notice that the `profile` branch no longer exists.  Don't worry, this doesn't change the data stored on disk.  Only the JT internal tree is being manipulated.
 
-<a name="Moving a Branch"></a>
+<a name="Moving-a-Branch"></a>
 ### 2.7 Moving a Branch
 
 We can move a branch from one location to another.  Let's try this by moving the  branch  `user:34/computers` to the `user:34/gear` branch. This makes sense right? After all, computers are gear right?
@@ -394,7 +394,7 @@ true
      gear: { cameras: [Object], computers: [Object] } } }
 ```
 
-<a name="Branch paths - revisited"></a>
+<a name="Branch-paths-revisited"></a>
 ### 2.8 Branch paths - revisited
 
 As we've seen, branch paths are a convenient way of specifying branches within JSON Tree.
@@ -412,7 +412,7 @@ Again, to see a list of branches you can always use the aptly named `getBranches
   'user:34/gear/computers' ]
 ```
 
-<a name="Querying JSON Tree"></a>
+<a name="Querying-JSON-Tree"></a>
 ## 3. Querying JSON Tree
 
 JSON Tree can be queried using a branch path and a query string. Under the hood, JSON Tree uses [JSPath](https://github.com/dfilatov/jspath), a domain-specific language (DSL) "that enables you to navigate and find data within your JSON documents." Make sure to visit that project to learn more than we'll examine here.
@@ -428,7 +428,7 @@ For the next set of exercises, lets begin by reloading JT's tree using different
 { library: { books: [ [Object], [Object], [Object], [Object] ] } }
 ```
 
-<a name="Querying with the dot operator"></a>
+<a name="Querying-with-the-dot-operator"></a>
 ### 3.1 Querying with the dot operator
 
 You can query JSON Tree using the same syntax, which is similar to the Javascript dot operator.  The first parameter to the `query` method is the branch selector, in our case `library` and the second parameter is the query string.
@@ -478,7 +478,7 @@ We can retrieve the book titles in one of two ways:
 
 Take a close look, the only difference is the use of the `..` operator, which is useful for descending into data.
 
-<a name="Querying with the array operator"></a>
+<a name="Querying-with-the-array-operator"></a>
 ### 3.2 Querying with the array operator
 
 If you know the array position of a entry you can retrieve it using:
@@ -512,7 +512,7 @@ Here's a way of retrieving the last three titles:
   'JavaScript: The Good Parts' ]
 ```
 
-<a name="Querying with predicates"></a>
+<a name="Querying-with-predicates"></a>
 ### 3.3 Querying with predicates
 
 A common pattern for querying is locating information based on an id value.  We can do this via JSON Tree using predicates:
@@ -586,12 +586,12 @@ And we can confirm this with:
 
 To learn more about what's possible, make sure to visit the [JSPath](https://github.com/dfilatov/jspath) site.
 
-<a name="Offline storage"></a>
+<a name="Offline-storage"></a>
 ## 4. Offline storage
 
 So far we've looked at how JSON Tree can be used in an in memory manor.  Adding, moving, deleting and querying JSON Tree entries are all easy to do.  But what about storing tree data between usages?
 
-<a name="Simple storage cases"></a>
+<a name="Simple-storage-cases"></a>
 ### 4.1 Simple storage cases
 
 If the data you're working with is relatively small then simply serializing the JSON Tree will suffice. This is useful when working in a web front-end and relying on the browser's local or session storage.
@@ -624,7 +624,7 @@ When working with local/session storage make sure to take advantage of the `getT
 'user:34'
 ```
 
-<a name="Working with a larger JSON document"></a>
+<a name="Working-with-a-larger-JSON-document"></a>
 ### 4.2 Working with a larger JSON document
 
 For larger JSON documents and or more advanced use-cases, JSON Tree features a method which can be used to serialize data to external data stores such as caches and databases.
@@ -656,7 +656,7 @@ The `exportTree` method returns an array of tree path objects which contain `pat
 
 Using this array of objects we can store a JSON Tree using any key/value store or relational database.
 
-<a name="Relational databases"></a>
+<a name="Relational-databases"></a>
 #### 4.2.1 Relational databases
 
 In a relational use-case we can employ a generic table who's primary key is the branch path with the fewest segments. This is essentially the root of the tree because its tree path is the shortest.
@@ -708,7 +708,7 @@ So the SQL pseudocode might look something like this:
 UPDATE jsontree SET (key='user:34', data=JSON.stringify(data));
 ```
 
-<a name="NoSQL stores - Redis"></a>
+<a name="NoSQL-stores-Redis"></a>
 #### 4.2.2 NoSQL stores - Redis
 
 NoSQL data stores, naturally offer a better fit. In this section we'll look at working with Redis, but the techniques outlined here will work similarly elsewhere.
@@ -754,7 +754,7 @@ Next let's create an instance of the Redis client and select database #13 - that
 true
 ```
 
-<a name="Storing a JSON Tree"></a>
+<a name="Storing-a-JSON-Tree"></a>
 #### 4.2.2.1 Storing a JSON Tree
 
 We can now take the exported JSON Tree data and write each segment to Redis:
@@ -813,7 +813,7 @@ rc.keys('user:34*', ((err, branchNames) => {
         idx += 1;
         return {
           name,
-					keyLength: name.split('/').length,
+	  keyLength: name.split('/').length,
           data: JSON.parse(branches[idx])
         };
       })
@@ -845,7 +845,7 @@ rc.keys('user:34*', ((err, branchNames) => {
 
 We can add the code above into a method called `loadTree` and call it a day.
 
-<a name="A breakdown of the load technique"></a>
+<a name="A-breakdown-of-the-load-technique"></a>
 #### 4.2.2.3 A breakdown of the load technique
 
 To better understand the tree load algorithm we'll look at each phase and examine the output responses in detail.  The results will be the same as the last example, albeit a lot longer.
@@ -1030,7 +1030,7 @@ Finally we can confirm success by viewing the loaded JSON Tree:
 }
 ```
 
-<a name="NoSQL Stores - AWS DynamoDB"></a>
+<a name="NoSQL-Stores-AWS-DynamoDB"></a>
 ### 4.2.3 NoSQL Stores - AWS DynamoDB
 
 DynamoDB is Amazon's NoSQL Database.
@@ -1060,7 +1060,7 @@ The use-cases for JSON Tree and DynamoDB relate to a combination of the followin
 
 With those goals in mind we won't spend time considering DynamoDB's document store and instead will focus on DynamoDB's key value store.
 
-<a name="Getting started with DynamoDB"></a>
+<a name="Getting-started-with-DynamoDB"></a>
 #### 4.2.3.1 Getting started with DynamoDB
 
 In this section we'll continue using our REPL, however we'll need to also use the [AWS SDK](https://aws.amazon.com/sdk-for-node-js) for Node. You can learn more about this approach via:
@@ -1097,7 +1097,7 @@ $ node repl.js
 });
 ```
 
-<a name="Storing Tree data in DynamoDB"></a>
+<a name="Storing-Tree-data-in-DynamoDB"></a>
 #### 4.2.3.2 Storing Tree data in DynamoDB
 
 
@@ -1126,7 +1126,7 @@ $ node repl.js
 });
 ```
 
-<a name="Loading Tree data from DynamoDB"></a>
+<a name="Loading-Tree-data-from-DynamoDB"></a>
 #### 4.2.3.3 Loading Tree data from DynamoDB
 
 
